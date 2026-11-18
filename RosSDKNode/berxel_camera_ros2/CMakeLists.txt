@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(berxel_camera_ros2)
 
+option(INSTALL_UDEV_RULES "Install udev rule for Berxel cameras" ON)
+
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
@@ -122,6 +124,16 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}/
 )
 
+if(INSTALL_UDEV_RULES)
+  # Install into package share so users can manually copy with sudo if desired
+  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/scripts/99-berxel-camera.rules
+          DESTINATION share/${PROJECT_NAME}/udev)
+endif()
+if(DEFINED ENV{BUILDING_PACKAGE})
+  # Install udev rules
+  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/scripts/99-berxel-camera.rules
+          DESTINATION /etc/udev/rules.d)
+endif()
 
 ament_package()
 

@@ -29,7 +29,8 @@ ros2 launch berxel_camera_ros2 berxel_camera_multi.launch.py
 | `RosSDKNode/berxel_camera_ros2/` | ROS 2 驱动 |
 | `samples/` | 原生示例 |
 | `Documentation/` | 厂商 PDF |
-| `install.sh`、`99-berxel-camera.rules`、`berxel_set_env.sh` | 安装 / 环境脚本 |
+| `install.sh`、`berxel_set_env.sh` | 安装 / 环境脚本 |
+| `RosSDKNode/berxel_camera_ros2/scripts/99-berxel-camera.rules` | udev 规则 |
 
 ## 许可证
 

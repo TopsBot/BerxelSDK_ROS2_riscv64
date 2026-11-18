@@ -29,7 +29,8 @@ Driver notes: `RosSDKNode/berxel_camera_ros2/README_EN.MD`
 | `RosSDKNode/berxel_camera_ros2/` | ROS 2 driver |
 | `samples/` | Native samples |
 | `Documentation/` | Vendor PDFs |
-| `install.sh`, `99-berxel-camera.rules`, `berxel_set_env.sh` | Install / env helpers |
+| `install.sh`, `berxel_set_env.sh` | Install / env helpers |
+| `RosSDKNode/berxel_camera_ros2/scripts/99-berxel-camera.rules` | udev rules |
 
 ## License
 
